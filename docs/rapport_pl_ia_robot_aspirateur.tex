@@ -71,9 +71,6 @@
 \usepackage[pdfpagelabels=false]{hyperref}
 
 % --- Annexes ---
-\renewcommand{\appendixname}{Annexe}
-\renewcommand{\appendixtocname}{Annexes}
-\renewcommand{\appendixpagename}{Annexes}
 
 \begin{document}
 	
@@ -452,10 +449,20 @@
 	recherche n'explore inutilement de nombreux états. Ici, ce n'était pas
 	nécessaire.
 	
-	\subsection{Lecture du plan}
+	\subsection{Résultat de l'exécution}
 	
 	Sur le scénario 1, le planificateur trouve une solution en quelques
-	millisecondes. Le plan comporte neuf actions.
+	millisecondes. La sortie du terminal confirme la réussite de la recherche
+	et indique le coût du plan.
+	
+	\begin{lstlisting}[style=base, caption={Extrait de la sortie de Fast Downward.}]
+		Solution found!
+		Plan length: 9 step(s).
+		Plan cost: 9
+	\end{lstlisting}
+	
+	Le plan produit, sauvegardé dans le fichier \texttt{sas\_plan}, comporte
+	neuf actions.
 	
 	\begin{lstlisting}[style=pddl, caption={Plan produit pour le scénario 1.}]
 		move  r1 salon chambre
@@ -600,7 +607,7 @@
 	
 	\section{Conclusion}
 	
-	Ce TP nous a fait parcourir l'ensemble de la chaîne de planification
+	Ce travail nous a fait parcourir l'ensemble de la chaîne de planification
 	classique, depuis la description informelle d'un problème jusqu'à la
 	vérification d'un plan exécutable. Le passage de la description en langage
 	naturel à un modèle STRIPS nous a obligés à identifier précisément ce qui
