@@ -102,9 +102,9 @@
 			\large
 			\renewcommand{\arraystretch}{1.5}
 			\begin{tabular}{l c c l c}
-				1. KIMBUNGU SIMEON Gédéon     & [\quad] & \hspace{0.5cm} & 4. TANDU KIKALANGA Nathan   & [\quad] \\
-				2. LABEM KAPINGA Ketsia       & [\quad] & \hspace{0.5cm} & 5. LUNGA KABITA Supreme     & [\quad] \\
-				3. KALEMBU MASIRIKA Constantin & [\quad] & \hspace{0.5cm} &                             &          \\
+				1. KIMBUNGU SIMEON Gédéon      & [\quad] & \hspace{0.5cm} & 4. TANDU KIKALANGA Nathan       & [\quad] \\
+				2. LABEM KAPINGA Ketsia        & [\quad] & \hspace{0.5cm} & 5. LUNGA KABITA Supreme         & [\quad] \\
+				3. KALEMBU MASIRIKA Constantin & [\quad] & \hspace{0.5cm} & 6. MUJINGA MATAMBA Plamedie     & [\quad] \\
 			\end{tabular}
 		\end{center}
 		
@@ -116,7 +116,8 @@
 			\vspace{0.5cm}
 			\begin{tabular}{ll}
 				Domaine    & : Sciences et Technologies \\
-				Professeur & : \textbf{Doctorant. Patrick MANYA} \\
+				Professeur & : \textbf{MAYAMONA} \\
+				Doctorant & : Patrick MANYA \\
 			\end{tabular}
 		\end{flushleft}
 		
@@ -605,36 +606,14 @@
 	\texttt{room} ou \texttt{robot} provoque une erreur d'instanciation qui
 	n'est pas toujours facile à localiser.
 	
+	\newpage
 	\section{Conclusion}
 	
-	Ce travail nous a fait parcourir l'ensemble de la chaîne de planification
-	classique, depuis la description informelle d'un problème jusqu'à la
-	vérification d'un plan exécutable. Le passage de la description en langage
-	naturel à un modèle STRIPS nous a obligés à identifier précisément ce qui
-	constitue un état, ce qui distingue une précondition d'un effet, et ce que
-	signifie atteindre un but. Nous avons également constaté qu'un plan
-	optimal en longueur n'est pas nécessairement unique, et que le rôle du
-	planificateur se limite à trouver une séquence d'actions cohérente avec le
-	modèle qu'on lui a fourni.
+	Ce travail nous a menés de la description informelle du problème à la vérification d'un plan exécutable. Modéliser en STRIPS nous a obligés à définir ce qu'est un état et à distinguer clairement les préconditions des effets. Nous avons aussi constaté qu'un plan optimal en longueur n'est pas forcément unique et que le planificateur ne fait que proposer une séquence cohérente avec le modèle fourni.
 	
-	Le modèle que nous avons écrit couvre la topologie du logement et l'état de
-	propreté des pièces, mais il laisse de côté plusieurs aspects du problème
-	réel. Le robot ne dispose pas de batterie, ne met pas de temps à se
-	déplacer, ne rencontre pas d'obstacles et ne peut pas échouer dans son
-	nettoyage. Chacune de ces dimensions pourrait être ajoutée, mais elle
-	nécessiterait des prédicats supplémentaires et rendrait la recherche plus
-	coûteuse : la simplicité du modèle actuel est aussi ce qui permet au
-	planificateur de trouver une solution en quelques millisecondes.
+	Le modèle couvre la topologie du logement et l'état des pièces, mais il ignore la batterie, le temps de déplacement, les obstacles ou les échecs de nettoyage. Ajouter ces dimensions demanderait de nouveaux prédicats et rendrait la recherche plus lourde. La simplicité actuelle est ce qui permet au planificateur de trouver une solution en quelques millisecondes.
 	
-	Plusieurs pistes d'amélioration seraient envisageables. On pourrait
-	introduire une notion de coût différencié entre les déplacements et les
-	nettoyages, pour que le planificateur privilégie les plans qui minimisent
-	le temps plutôt que le nombre d'actions. On pourrait également ajouter des
-	pièces supplémentaires ou des passages multiples entre deux pièces, afin
-	d'étudier comment le plan évolue quand le graphe devient plus riche.
-	Enfin, on pourrait comparer plusieurs heuristiques de Fast Downward sur le
-	même problème pour observer l'effet du choix de la méthode de recherche
-	sur le temps de calcul et sur la qualité du plan produit.
+	Plusieurs prolongements seraient possibles. On pourrait introduire un coût différencié entre déplacement et nettoyage pour privilégier le temps, enrichir le graphe du logement pour observer l'évolution du plan, ou comparer plusieurs heuristiques de Fast Downward pour mesurer l'impact du choix de la recherche.
 	
 	% ============================================================
 	% ANNEXES
